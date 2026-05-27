@@ -1,0 +1,98 @@
+# ============================================================
+# docker-compose.yml - VPS Dedicada Corumbá Sistemas
+# ============================================================
+# Subir tudo:  docker compose up -d
+# Ver logs:    docker compose logs -f
+# Parar tudo:  docker compose down
+# ============================================================
+
+version: '3.8'
+
+services:
+  # ========================================
+  # BANCO DE DADOS (compartilhado pelos 3 sistemas)
+  # ========================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: corumba-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_admin_2025
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-databases.sql:/docker-entrypoint-initdb.d/init.sql
+    command: >
+      postgres
+        -c listen_addresses='*'
+        -c max_connections=200
+        -c shared_buffers=256MB
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - corumba-net
+
+  # ========================================
+  # pgAdmin (visualizar banco no browser)
+  # ========================================
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: corumba-pgadmin
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@corumbasistemas.com.br
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - corumba-net
+
+  # ========================================
+  # Evolution API (WhatsApp - ConsultaAgenda)
+  # ========================================
+  evolution-mongo:
+    image: mongo:7
+    container_name: evolution-mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - corumba-net
+
+  evolution-api:
+    image: atendai/evolution-api:latest
+    container_name: evolution-api
+    restart: always
+    ports:
+      - "8081:8080"
+    environment:
+      SERVER_URL: http://localhost:8081
+      AUTHENTICATION_API_KEY: evo_api_key_2025_corumba
+      WEBHOOK_GLOBAL_ENABLED: "true"
+      WEBHOOK_GLOBAL_URL: http://consultaagenda-backend:8085/whatsapp/webhook
+      WEBHOOK_EVENTS_MESSAGES_UPSERT: "true"
+      DATABASE_PROVIDER: mongodb
+      DATABASE_CONNECTION_URI: mongodb://evolution-mongo:27017/evolution
+      CACHE_REDIS_ENABLED: "false"
+      PROVIDER_ENABLED: "false"
+    depends_on:
+      - evolution-mongo
+    networks:
+      - corumba-net
+
+networks:
+  corumba-net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  mongo_data:
