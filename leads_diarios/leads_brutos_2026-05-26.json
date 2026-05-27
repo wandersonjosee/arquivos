@@ -1,0 +1,114 @@
+[
+  {
+    "nome": "SEVEN BARBEARIA LTDA",
+    "telefone": "(62) 99675-9173",
+    "endereco": "R. 70, Qd. 185 - Lt. 4 - Independência - 1º Complemento St. das Mansões, Aparecida de Goiânia - GO",
+    "bairro": "Independência Mansões",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "Barbeiro Fora da Curva",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Independência Mansões",
+    "tipo": "barbearia",
+    "avaliacao": "4.8"
+  },
+  {
+    "nome": "Barbearia Marabá Parque Hayala",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Independência Mansões",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "Route 73 Barbearia",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Independência Mansões",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "BARBEARIA PEDRO SILVA",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Independência Mansões",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "Brutos Barbearia",
+    "telefone": "(62) 99415-2445",
+    "endereco": "Av. Independência, qd.04 - lt.08 Sala 01 - Jardim Monte Cristo, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Monte Sinai",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "D.S. Barbearia",
+    "telefone": "",
+    "endereco": "Av. das Nações, qd-25 - lt 22, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Monte Sinai",
+    "tipo": "barbearia",
+    "avaliacao": "4.9"
+  },
+  {
+    "nome": "MR Barbearia",
+    "telefone": "",
+    "endereco": "Av. Amazonas, Qd 12 - Lt 01 casa 2, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Monte Sinai",
+    "tipo": "barbearia",
+    "avaliacao": "4.9"
+  },
+  {
+    "nome": "BARBEARIA AF",
+    "telefone": "",
+    "endereco": "Av. W-5, Quadra 25 - lote 09, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Monte Sinai",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "Wesley Borges Barbearia",
+    "telefone": "",
+    "endereco": "R. Nordeste, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Monte Sinai",
+    "tipo": "barbearia",
+    "avaliacao": "4.9"
+  },
+  {
+    "nome": "Metrópoles barbearia",
+    "telefone": "(62) 99434-1381",
+    "endereco": "Av. Benedito Silvestre de Toledo, QD 01 - LT 21, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Riviera",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "K3 Barbearia",
+    "telefone": "",
+    "endereco": "R. Sabiá, 1356-1440, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Riviera",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "BARBEARIA METROPOLES",
+    "telefone": "",
+    "endereco": "Av. Dr. Pedro L. Teixeira, 246, Aparecida de Goiânia - GO",
+    "bairro": "Jardim Riviera",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  },
+  {
+    "nome": "Messyas Barbearia",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Jardim Riviera",
+    "tipo": "barbearia",
+    "avaliacao": "5.0"
+  }
+]

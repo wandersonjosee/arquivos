@@ -1,0 +1,82 @@
+[
+  {
+    "nome": "Brutos Barbearia",
+    "telefone": "(62) 99415-2445",
+    "endereco": "Av. Independencia, qd.04 - lt.08 Sala 01 - Jardim Monte Cristo",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "5.0",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  },
+  {
+    "nome": "D.S. Barbearia",
+    "telefone": "",
+    "endereco": "Av. das Nacoes, qd-25 - lt 22",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "4.9",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  },
+  {
+    "nome": "MR Barbearia",
+    "telefone": "",
+    "endereco": "Av. Amazonas, Qd 12 - Lt 01 casa 2",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "4.9",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  },
+  {
+    "nome": "BARBEARIA AF",
+    "telefone": "",
+    "endereco": "Av. W-5, Quadra 25 - lote 09",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "5.0",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  },
+  {
+    "nome": "Wesley Borges Barbearia",
+    "telefone": "",
+    "endereco": "R. Nordeste",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "4.9",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  },
+  {
+    "nome": "Tarzan Barbearia & Piercing Studio",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  },
+  {
+    "nome": "Barbearia Capelli",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  },
+  {
+    "nome": "Barbearia Esto Vir",
+    "telefone": "",
+    "endereco": "",
+    "bairro": "Jardim Monte Sinai",
+    "avaliacao": "",
+    "data_captacao": "2026-05-26 15:00",
+    "cnpj": "",
+    "site": ""
+  }
+]

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<AnchorPane prefHeight="500" prefWidth="420" style="-fx-background-color: #1a1a2e;"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.corumbasistemas.corubafood.controller.LoginController">
+    <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="40" AnchorPane.rightAnchor="40" AnchorPane.topAnchor="40">
+        <Label text="🍽️ Coruba Food" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #e94560;"/>
+        <Label text="MesaPronta v2.0" style="-fx-font-size: 14px; -fx-text-fill: #a0a0b0;"/>
+        <Separator prefWidth="340"/>
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Documento da Empresa (CNPJ/CPF)" style="-fx-text-fill: #c0c0d0;"/>
+            <TextField fx:id="txtDocumento" promptText="00.000.000/0001-00" prefHeight="40"/>
+        </VBox>
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Usuario" style="-fx-text-fill: #c0c0d0;"/>
+            <TextField fx:id="txtUsername" promptText="Nome de usuario" prefHeight="40"/>
+        </VBox>
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Senha" style="-fx-text-fill: #c0c0d0;"/>
+            <PasswordField fx:id="txtSenha" promptText="••••••••" prefHeight="40"/>
+        </VBox>
+        <Label fx:id="lblMensagem" style="-fx-font-size: 13px;"/>
+        <Button fx:id="btnEntrar" text="Entrar" onAction="#handleEntrar" prefWidth="340" prefHeight="45"
+                style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #e94560; -fx-text-fill: white;"/>
+        <ProgressIndicator fx:id="progress" visible="false"/>
+        <Label text="© 2025 Corumba Sistemas" style="-fx-font-size: 11px; -fx-text-fill: #606070;"/>
+    </VBox>
+</AnchorPane>

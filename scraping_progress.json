@@ -1,0 +1,21 @@
+{
+  "todo_list": [
+    "farmácia - Independência Mansões",
+    "drogaria - Independência Mansões",
+    "pet shop - Independência Mansões",
+    "óptica - Independência Mansões",
+    "loja de roupas - Independência Mansões",
+    "material de construção - Independência Mansões",
+    "distribuidora - Independência Mansões",
+    "Then repeat for all other 14 neighborhoods"
+  ],
+  "collected_so_far": {
+    "Independência Mansões": {
+      "salão de beleza": 5,
+      "restaurante": 4,
+      "pizzaria": 2,
+      "padaria": 1
+    }
+  },
+  "total_leads_so_far": 12
+}

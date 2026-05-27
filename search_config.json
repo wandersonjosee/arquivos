@@ -1,0 +1,33 @@
+{
+  "bairros": [
+    "Independência Mansões",
+    "Jardim Monte Sinai",
+    "Jardim Riviera",
+    "Bairro Independência",
+    "Colina Azul",
+    "St Fabricio",
+    "Jardim Monte Líbano",
+    "St dos Estados",
+    "Cidade Livre",
+    "Jardim Cristalino",
+    "Setor Marista Sul",
+    "Virgínia Parque",
+    "St Andrade Reis",
+    "Parque Itatiaia",
+    "Jardim Ipiranga"
+  ],
+  "tipos": [
+    "salão de beleza",
+    "restaurante",
+    "lanchonete",
+    "pizzaria",
+    "padaria",
+    "farmácia",
+    "drogaria",
+    "pet shop",
+    "óptica",
+    "loja de roupas",
+    "material de construção",
+    "distribuidora"
+  ]
+}

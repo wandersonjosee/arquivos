@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane prefHeight="800" prefWidth="1200" style="-fx-background-color: #16213e;"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox spacing="15" style="-fx-background-color: #0f3460; -fx-padding: 10 20;">
+            <Label text="🍽️ Coruba Food - MesaPronta" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="© 2025 Corumba Sistemas" style="-fx-text-fill: #a0a0b0;"/>
+        </HBox>
+    </top>
+    <left>
+        <VBox spacing="8" prefWidth="220" style="-fx-background-color: #1a1a2e; -fx-padding: 15 10;">
+            <Label text="MENU" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #606070;"/>
+            <Separator/>
+            <Button text="🏠  Mesas" prefWidth="200" prefHeight="40" style="-fx-font-size: 14px; -fx-background-color: #e94560; -fx-text-fill: white;"/>
+            <Button text="📦  Produtos" prefWidth="200" prefHeight="40" style="-fx-font-size: 14px; -fx-background-color: transparent; -fx-text-fill: #c0c0d0;"/>
+            <Button text="📋  Pedidos" prefWidth="200" prefHeight="40" style="-fx-font-size: 14px; -fx-background-color: transparent; -fx-text-fill: #c0c0d0;"/>
+            <Button text="💰  Pagamentos" prefWidth="200" prefHeight="40" style="-fx-font-size: 14px; -fx-background-color: transparent; -fx-text-fill: #c0c0d0;"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Separator/>
+            <Button text="🚪  Sair" prefWidth="200" prefHeight="40" style="-fx-font-size: 14px; -fx-background-color: transparent; -fx-text-fill: #e94560;"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Mesas" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ Nova Mesa" prefHeight="35" style="-fx-background-color: #0f3460; -fx-text-fill: white;"/>
+            </HBox>
+            <FlowPane hgap="15" vgap="15">
+                <VBox prefWidth="180" prefHeight="120" style="-fx-background-color: #27ae60; -fx-background-radius: 10; -fx-padding: 15;" alignment="CENTER" spacing="5">
+                    <Label text="Mesa 1" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="✅ Livre" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+                </VBox>
+                <VBox prefWidth="180" prefHeight="120" style="-fx-background-color: #e94560; -fx-background-radius: 10; -fx-padding: 15;" alignment="CENTER" spacing="5">
+                    <Label text="Mesa 2" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="🔴 Ocupada" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+                </VBox>
+                <VBox prefWidth="180" prefHeight="120" style="-fx-background-color: #27ae60; -fx-background-radius: 10; -fx-padding: 15;" alignment="CENTER" spacing="5">
+                    <Label text="Mesa 3" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="✅ Livre" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+                </VBox>
+                <VBox prefWidth="180" prefHeight="120" style="-fx-background-color: #f39c12; -fx-background-radius: 10; -fx-padding: 15;" alignment="CENTER" spacing="5">
+                    <Label text="Mesa 4" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="🔒 Reservada" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+                </VBox>
+            </FlowPane>
+        </VBox>
+    </center>
+</BorderPane>
