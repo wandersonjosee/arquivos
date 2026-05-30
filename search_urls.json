@@ -1,0 +1,752 @@
+{
+  "Independência Mansões": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Independ%C3%AAncia%20Mans%C3%B5es%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Jardim Monte Sinai": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Jardim%20Monte%20Sinai%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Jardim Riviera": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Jardim%20Riviera%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Bairro Independência": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Bairro%20Independ%C3%AAncia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Colina Azul": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Colina%20Azul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "St Fabricio": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20St%20Fabricio%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Jardim Monte Líbano": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Jardim%20Monte%20L%C3%ADbano%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "St dos Estados": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20St%20dos%20Estados%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Cidade Livre": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Cidade%20Livre%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Jardim Cristalino": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Jardim%20Cristalino%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Setor Marista Sul": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Setor%20Marista%20Sul%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Virgínia Parque": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Virg%C3%ADnia%20Parque%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "St Andrade Reis": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20St%20Andrade%20Reis%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Parque Itatiaia": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Parque%20Itatiaia%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ],
+  "Jardim Ipiranga": [
+    {
+      "tipo": "salão de beleza",
+      "url": "https://www.google.com/maps/search/sal%C3%A3o%20de%20beleza%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "restaurante",
+      "url": "https://www.google.com/maps/search/restaurante%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "lanchonete",
+      "url": "https://www.google.com/maps/search/lanchonete%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pizzaria",
+      "url": "https://www.google.com/maps/search/pizzaria%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "padaria",
+      "url": "https://www.google.com/maps/search/padaria%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "farmácia",
+      "url": "https://www.google.com/maps/search/farm%C3%A1cia%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "drogaria",
+      "url": "https://www.google.com/maps/search/drogaria%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "pet shop",
+      "url": "https://www.google.com/maps/search/pet%20shop%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "óptica",
+      "url": "https://www.google.com/maps/search/%C3%B3ptica%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "loja de roupas",
+      "url": "https://www.google.com/maps/search/loja%20de%20roupas%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "material de construção",
+      "url": "https://www.google.com/maps/search/material%20de%20constru%C3%A7%C3%A3o%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    },
+    {
+      "tipo": "distribuidora",
+      "url": "https://www.google.com/maps/search/distribuidora%20em%20Jardim%20Ipiranga%20Aparecida%20de%20Goi%C3%A2nia%20GO"
+    }
+  ]
+}

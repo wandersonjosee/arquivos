@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Guia Completo: Agente de IA com n8n para Clínica Médica</title>
+<style>
+  @page { size: A4; margin: 2cm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 11pt; color: #1a202c; line-height: 1.6; }
+  
+  .capa { text-align: center; padding-top: 60px; page-break-after: always; }
+  .capa .emoji { font-size: 72px; margin-bottom: 10px; }
+  .capa h1 { font-size: 28pt; color: #1a365d; margin-bottom: 8px; }
+  .capa h2 { font-size: 18pt; color: #2b6cb0; margin-bottom: 6px; font-weight: 400; }
+  .capa .sub { font-size: 12pt; color: #718096; margin-bottom: 30px; }
+  .capa hr { border: none; border-top: 2px solid #2b6cb0; margin: 15px auto; width: 200px; }
+  
+  .info-box { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px 20px; margin: 15px 0; }
+  .info-box table { width: 100%; border-collapse: collapse; }
+  .info-box td { padding: 6px 10px; border-bottom: 1px solid #e2e8f0; font-size: 10pt; }
+  .info-box td:first-child { font-weight: bold; color: #1a365d; width: 140px; }
+  
+  h1 { font-size: 20pt; color: #1a365d; margin-top: 24px; margin-bottom: 10px; border-bottom: 2px solid #2b6cb0; padding-bottom: 6px; page-break-after: avoid; }
+  h2 { font-size: 15pt; color: #2b6cb0; margin-top: 18px; margin-bottom: 8px; page-break-after: avoid; }
+  h3 { font-size: 12pt; color: #38a169; margin-top: 12px; margin-bottom: 6px; }
+  
+  p { margin-bottom: 8px; text-align: justify; }
+  
+  ul, ol { margin: 6px 0 10px 24px; }
+  li { margin-bottom: 4px; }
+  
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9.5pt; }
+  th { background: #1a365d; color: white; padding: 8px 10px; text-align: center; font-size: 9.5pt; }
+  td { padding: 7px 10px; border: 1px solid #e2e8f0; }
+  tr:nth-child(even) { background: #f7fafc; }
+  tr:hover { background: #edf2f7; }
+  
+  .destaque { background: #f0fff4; border: 1px solid #38a169; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+  .aviso { background: #fffff0; border: 1px solid #dd6b20; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+  
+  .codigo { background: #1a202c; color: #68d391; font-family: 'Consolas', 'Courier New', monospace; font-size: 9pt; padding: 14px 18px; border-radius: 6px; margin: 10px 0; white-space: pre-wrap; word-wrap: break-word; line-height: 1.5; }
+  
+  .page-break { page-break-after: always; }
+  
+  .sumario { background: #ebf8ff; border: 1px solid #bee3f8; border-radius: 8px; padding: 15px 20px; margin: 15px 0; }
+  .sumario li { margin-bottom: 3px; }
+  
+  .checklist li { list-style: none; margin-bottom: 4px; }
+  .checklist li:before { content: "☐ "; color: #38a169; font-size: 14pt; }
+  
+  .total-row { background: #ebf8ff !important; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="capa">
+  <div class="emoji">🤖</div>
+  <h1>GUIA COMPLETO</h1>
+  <h1>Agente de IA com n8n</h1>
+  <h1>para Clínica Médica</h1>
+  <hr>
+  <h2>Atendente Virtual Inteligente</h2>
+  <p class="sub">Consulta de Agenda • Agendamento Automatizado • Confirmações via WhatsApp</p>
+  <hr>
+  <br><br>
+  <div class="info-box" style="max-width: 500px; margin: 0 auto; text-align: left;">
+    <table>
+      <tr><td>Tecnologia</td><td>n8n (self-hosted) + Google Calendar API + WhatsApp</td></tr>
+      <tr><td>Custo da API</td><td>GRATUITA (Google Calendar API) + WhatsApp via Evolution API</td></tr>
+      <tr><td>Complexidade</td><td>Intermediária — Sem código (no-code/low-code)</td></tr>
+      <tr><td>Tempo de setup</td><td>4 a 8 horas</td></tr>
+    </table>
+  </div>
+  <br><br>
+  <p style="color: #a0aec0; font-size: 10pt;">Gerado em: Maio/2026</p>
+</div>
+
+<!-- SUMÁRIO -->
+<div class="page-break"></div>
+<h1>SUMÁRIO</h1>
+<div class="sumario">
+  <ol>
+    <li>Visão Geral do Projeto</li>
+    <li>O Que Você Vai Precisar (Pré-requisitos)</li>
+    <li>Arquitetura do Fluxo</li>
+    <li>Passo a Passo: Configuração do n8n</li>
+    <li>Passo a Passo: Google Cloud &amp; Calendar API</li>
+    <li>Passo a Passo: Criação do Fluxo no n8n</li>
+    <li>Configuração do WhatsApp</li>
+    <li>Prompt do Agente de IA</li>
+    <li>Testes e Validação</li>
+    <li>Tabela de Preços (Quanto Cobrar)</li>
+    <li>Dicas Avançadas</li>
+  </ol>
+</div>
+
+<!-- 1. VISÃO GERAL -->
+<div class="page-break"></div>
+<h1>1. VISÃO GERAL DO PROJETO</h1>
+
+<p>Este guia ensina a criar um <b>agente de IA completamente funcional</b> que atua como atendente virtual de uma clínica médica. O agente consulta a agenda do Google Calendar, verifica horários disponíveis, agenda consultas e envia confirmações — tudo de forma automatizada e gratuita.</p>
+
+<h2>O que o agente faz:</h2>
+<ol>
+  <li><b>Recebe mensagens</b> do paciente via WhatsApp (ou outro canal)</li>
+  <li><b>Entende a intenção</b> usando IA (classifica: agendar, cancelar, remarcar, dúvida)</li>
+  <li><b>Consulta o Google Calendar</b> para verificar horários disponíveis</li>
+  <li><b>Agenda a consulta</b> diretamente no calendário do médico</li>
+  <li><b>Envia confirmação</b> automática ao paciente</li>
+  <li><b>Responde dúvidas</b> sobre horários, endereço e preparo para exames</li>
+  <li><b>Envia lembretes</b> automáticos 24h antes da consulta</li>
+</ol>
+
+<div class="destaque">
+  <b>💡 Por que n8n?</b> O n8n é uma ferramenta de automação open-source (gratuita para self-host) que permite criar fluxos visuais complexos sem escrever código. Ele tem integração nativa com Google Calendar, WhatsApp (via APIs), e suporte a IA com vários modelos gratuitos (Groq, Ollama local).
+</div>
+
+<!-- 2. PRÉ-REQUISITOS -->
+<div class="page-break"></div>
+<h1>2. O QUE VOCÊ VAI PRECISAR</h1>
+
+<h2>2.1 — Hardware / Servidor</h2>
+<table>
+  <tr><th>Item</th><th>Especificação</th></tr>
+  <tr><td>Servidor</td><td>VPS mínimo: 2 vCPU, 4GB RAM (ex: DigitalOcean ~R$60/mês)</td></tr>
+  <tr><td>Sistema</td><td>Linux (Ubuntu 22.04+) ou Docker local</td></tr>
+  <tr><td>Domínio</td><td>Nome de domínio apontado para o servidor (opcional, recomendado)</td></tr>
+  <tr><td>Node.js</td><td>v18+ (necessário para rodar o n8n)</td></tr>
+</table>
+
+<h2>2.2 — Contas e Serviços Gratuitos</h2>
+<table>
+  <tr><th>Serviço</th><th>Finalidade</th><th>Custo</th></tr>
+  <tr><td>Google Cloud (GCP)</td><td>Criar projeto para Google Calendar API</td><td>Gratuito</td></tr>
+  <tr><td>Google Calendar</td><td>Agenda do médico — consulta e agendamento</td><td>Gratuito</td></tr>
+  <tr><td>Evolution API</td><td>Comunicação WhatsApp (open source, self-hosted)</td><td>Gratuito</td></tr>
+  <tr><td>n8n (self-hosted)</td><td>Motor de automação</td><td>Gratuito (open source)</td></tr>
+  <tr><td>Groq Cloud API</td><td>Modelo de IA gratuito (Llama 3/Mixtral)</td><td>Gratuito</td></tr>
+  <tr><td>ngrok ou domínio</td><td>Expor n8n para receber webhooks</td><td>Gratuito (ngrok)</td></tr>
+</table>
+
+<div class="aviso">
+  <b>⚠️ Nota sobre WhatsApp:</b> Para produção com muitos pacientes, use a WhatsApp Business API oficial (via Meta ou provedores como Wati, Chatwoot, Evolution API). Para testes ou clínicas pequenas, a Evolution API (open source, baseada no WhatsApp Web) funciona muito bem e é gratuita.
+</div>
+
+<!-- 3. ARQUITETURA -->
+<div class="page-break"></div>
+<h1>3. ARQUITETURA DO FLUXO</h1>
+
+<p>O fluxo do agente de atendimento segue a seguinte arquitetura:</p>
+
+<table>
+  <tr><th>ETAPA</th><th>COMPONENTE N8N</th><th>DESCRIÇÃO</th></tr>
+  <tr><td>1. Entrada</td><td>Webhook / WhatsApp Trigger</td><td>Paciente envia mensagem pelo WhatsApp</td></tr>
+  <tr><td>2. Receber</td><td>Webhook Node</td><td>n8n recebe a mensagem (JSON via POST)</td></tr>
+  <tr><td>3. Entender</td><td>AI Agent (Groq/Ollama)</td><td>IA analisa a intenção do paciente</td></tr>
+  <tr><td>4. Decidir</td><td>Switch / If Node</td><td>Roteia: agendar, cancelar, consultar, dúvida</td></tr>
+  <tr><td>5a. Buscar</td><td>Google Calendar — List Events</td><td>Lista eventos para ver disponibilidade</td></tr>
+  <tr><td>5b. Criar</td><td>Google Calendar — Create Event</td><td>Cria o evento da consulta na agenda</td></tr>
+  <tr><td>5c. Deletar</td><td>Google Calendar — Delete Event</td><td>Cancela evento existente</td></tr>
+  <tr><td>6. Responder</td><td>WhatsApp Send Message</td><td>Envia confirmação ao paciente</td></tr>
+  <tr><td>7. Lembrete</td><td>Schedule Trigger + Flow</td><td>Envia lembrete 24h antes (opcional)</td></tr>
+</table>
+
+<!-- 4. CONFIGURAÇÃO DO N8N -->
+<div class="page-break"></div>
+<h1>4. PASSO A PASSO: CONFIGURAÇÃO DO N8N</h1>
+
+<h2>4.1 — Instalação via Docker (Recomendado)</h2>
+<p>A forma mais simples e confiável de rodar o n8n é via Docker. Execute os comandos abaixo no seu servidor Linux:</p>
+
+<div class="codigo"># Criar diretório para dados persistentes
+mkdir -p /opt/n8n && cd /opt/n8n
+
+# Criar docker-compose.yml
+cat &gt; docker-compose.yml &lt;&lt; 'EOF'
+version: '3.8'
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=n8n.seudominio.com
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n.seudominio.com/
+      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - TZ=America/Sao_Paulo
+    volumes:
+      - n8n_data:/home/node/.n8n
+volumes:
+  n8n_data:
+EOF
+
+# Subir o container
+docker compose up -d
+
+# Verificar se está rodando
+docker logs n8n --tail 20</div>
+
+<div class="destaque">
+  Acesse <b>http://IP-DO-SERVIDOR:5678</b> para ver a interface do n8n pela primeira vez. Crie a conta de administrador.
+</div>
+
+<h2>4.2 — Instalação via npm (alternativa)</h2>
+<div class="codigo"># Instalar n8n globalmente
+npm install n8n -g
+
+# Configurar variáveis de ambiente
+export N8N_HOST=localhost
+export N8N_PORT=5678
+export N8N_PROTOCOL=http
+export WEBHOOK_URL=http://localhost:5678/
+export GENERIC_TIMEZONE=America/Sao_Paulo
+export TZ=America/Sao_Paulo
+
+# Iniciar
+n8n start</div>
+
+<h2>4.3 — Configuração de Proxy Reverso (Nginx + SSL)</h2>
+<div class="codigo"># Instalar Nginx e Certbot
+sudo apt install nginx certbot python3-certbot-nginx -y
+
+# Criar configuração
+sudo tee /etc/nginx/sites-available/n8n &lt;&lt; 'EOF'
+server {
+    listen 80;
+    server_name n8n.seudominio.com;
+    location / {
+        proxy_pass http://localhost:5678;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+EOF
+
+# Ativar site e obter SSL gratuito
+sudo ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled/
+sudo certbot --nginx -d n8n.seudominio.com -m seu@email.com
+sudo nginx -t &amp;&amp; sudo systemctl reload nginx</div>
+
+<!-- 5. GOOGLE CLOUD -->
+<div class="page-break"></div>
+<h1>5. PASSO A PASSO: GOOGLE CLOUD &amp; CALENDAR API</h1>
+
+<h2>5.1 — Criar Projeto no Google Cloud Console</h2>
+<ol>
+  <li>Acesse <b>console.cloud.google.com</b> com sua conta Google</li>
+  <li>Clique em <b>Selecionar projeto</b> → <b>Novo Projeto</b></li>
+  <li>Dê um nome (ex: <b>agente-clinica</b>) e clique em <b>Criar</b></li>
+  <li>Aguarde a criação e selecione o projeto</li>
+</ol>
+
+<h2>5.2 — Ativar a Google Calendar API</h2>
+<ol>
+  <li>No menu lateral, vá em <b>APIs e Serviços</b> → <b>Biblioteca</b></li>
+  <li>Pesquise por <b>Google Calendar API</b></li>
+  <li>Clique em <b>Google Calendar API</b> → <b>Ativar</b></li>
+  <li>Aguarde a ativação (pode levar alguns segundos)</li>
+</ol>
+
+<h2>5.3 — Criar Credenciais OAuth 2.0</h2>
+<ol>
+  <li>Vá em <b>APIs e Serviços</b> → <b>Credenciais</b></li>
+  <li>Clique em <b>Criar Credenciais</b> → <b>ID do cliente OAuth</b></li>
+  <li>Se for a primeira vez, configure a <b>Tela de Consentimento</b>: Tipo = Externo, preencha nome do app, email, salve</li>
+  <li>Tipo de aplicativo: <b>Aplicativo da Web</b></li>
+  <li>Nome: <b>n8n-agente-clinica</b></li>
+  <li>Origens JavaScript autorizadas: <b>https://n8n.seudominio.com</b></li>
+  <li>URIs de redirecionamento: <b>https://n8n.seudominio.com/rest/oauth2-credential/callback</b></li>
+  <li>Clique em <b>Criar</b> e <b>copie o Client ID e Client Secret</b></li>
+</ol>
+
+<h2>5.4 — Configurar Credencial no n8n</h2>
+<ol>
+  <li>No n8n, vá em <b>Configurações</b> → <b>Credenciais</b> → <b>Adicionar Credencial</b></li>
+  <li>Pesquise por <b>Google OAuth2 API</b></li>
+  <li>Cole o <b>Client ID</b> e <b>Client Secret</b> obtidos no passo anterior</li>
+  <li>Clique em <b>Sign in with Google</b> e autorize o acesso</li>
+  <li>Selecione as permissões do Calendar (leitura e escrita)</li>
+  <li>Salve a credencial com nome: <b>Google Calendar - Clinica</b></li>
+</ol>
+
+<h2>5.5 — Preparar a Agenda no Google Calendar</h2>
+<ol>
+  <li>No Google Calendar (calendar.google.com), crie um novo calendário: <b>Clinica - Dr. Nome</b></li>
+  <li>Configure os <b>horários de atendimento</b> (ex: Seg-Sex 08:00-18:00, intervalo 12:00-13:00)</li>
+  <li>Defina o <b>ID do calendário</b> (nas configurações do calendário, procure por 'Integrar calendário')</li>
+  <li>Guarde o ID do calendário (formato: <b>xxxxx@group.calendar.google.com</b>)</li>
+</ol>
+
+<!-- 6. CRIAÇÃO DO FLUXO -->
+<div class="page-break"></div>
+<h1>6. PASSO A PASSO: CRIAÇÃO DO FLUXO NO N8N</h1>
+
+<p>Agora vamos criar o fluxo completo no n8n. Cada nó (node) é arrastado da paleta esquerda para a área de trabalho e conectado sequencialmente.</p>
+
+<h2>6.1 — Nó 1: Webhook (Receber Mensagem)</h2>
+<p>Este nó recebe a mensagem do paciente via WhatsApp. Clique em <b>Adicionar nó inicial</b> e selecione <b>Webhook</b>.</p>
+<table>
+  <tr><th>Parâmetro</th><th>Valor</th></tr>
+  <tr><td>HTTP Method</td><td>POST</td></tr>
+  <tr><td>Path</td><td>webhook/agente-clinica</td></tr>
+  <tr><td>Authentication</td><td>Header Auth com token secreto (recomendado)</td></tr>
+  <tr><td>Respond</td><td>When Last Node Finishes</td></tr>
+</table>
+<div class="destaque">
+  URL completa: <b>https://n8n.seudominio.com/webhook/agente-clinica</b>
+</div>
+
+<h2>6.2 — Nó 2: Extrair Dados da Mensagem</h2>
+<p>Adicione um nó <b>Edit Fields (Set)</b> para extrair os campos relevantes:</p>
+<table>
+  <tr><th>Campo</th><th>Valor / Expressão</th></tr>
+  <tr><td>telefone</td><td><code>=&#123;&#123; $json.from ou $json.messages[0].from &#125;&#125;</code></td></tr>
+  <tr><td>mensagem</td><td><code>=&#123;&#123; $json.body.message ou $json.messages[0].text.body &#125;&#125;</code></td></tr>
+  <tr><td>nome_paciente</td><td><code>=&#123;&#123; $json.contacts[0].profile.name ou 'Paciente' &#125;&#125;</code></td></tr>
+</table>
+
+<h2>6.3 — Nó 3: Agente de IA (Classificar Intenção)</h2>
+<p>Adicione um nó <b>AI Agent</b> com as seguintes configurações:</p>
+<table>
+  <tr><th>Parâmetro</th><th>Valor</th></tr>
+  <tr><td>Model</td><td>Groq - llama-3.3-70b-versatile (gratuito)</td></tr>
+  <tr><td>Temperature</td><td>0.3 (para respostas consistentes)</td></tr>
+  <tr><td>System Message</td><td>Veja Seção 8 (Prompt do Agente)</td></tr>
+  <tr><td>Prompt (User)</td><td><code>=&#123;&#123; $json.mensagem &#125;&#125;</code></td></tr>
+  <tr><td>Options</td><td>Structured Output com JSON Schema</td></tr>
+</table>
+
+<h2>6.4 — Nó 4: Switch (Roteamento por Intenção)</h2>
+<p>Adicione um nó <b>Switch</b> que analisa o campo <b>intencao</b> retornado pela IA:</p>
+<table>
+  <tr><th>Saída</th><th>Condição</th><th>Próximo nó</th></tr>
+  <tr><td>0</td><td>intencao == 'agendar'</td><td>Consultar Agenda (Google Calendar)</td></tr>
+  <tr><td>1</td><td>intencao == 'cancelar'</td><td>Deletar Evento</td></tr>
+  <tr><td>2</td><td>intencao == 'remarcar'</td><td>Cancelar + Reagendar</td></tr>
+  <tr><td>3</td><td>intencao == 'consultar_horarios'</td><td>Listar Disponibilidade</td></tr>
+  <tr><td>4</td><td>intencao == 'duvida'</td><td>Responder Dúvida (IA)</td></tr>
+  <tr><td>default</td><td>Qualquer outro</td><td>Transferir para humano</td></tr>
+</table>
+
+<h2>6.5 — Nó 5: Consultar Agenda (Google Calendar List)</h2>
+<p>Na ramificação <b>agendar</b>, adicione um nó <b>Google Calendar — List Events</b>:</p>
+<table>
+  <tr><th>Parâmetro</th><th>Valor</th></tr>
+  <tr><td>Credential</td><td>Google Calendar - Clinica (criada no passo 5.4)</td></tr>
+  <tr><td>Calendar</td><td>ID do calendário da clínica</td></tr>
+  <tr><td>Operation</td><td>List Events</td></tr>
+  <tr><td>Start</td><td><code>=&#123;&#123; new Date().toISOString() &#125;&#125;</code></td></tr>
+  <tr><td>End</td><td><code>=&#123;&#123; new Date(Date.now() + 7*24*60*60*1000).toISOString() &#125;&#125;</code></td></tr>
+</table>
+
+<h2>6.6 — Nó 6: Code Node (Calcular Vagas Livres)</h2>
+<p>Adicione um nó <b>Code (JavaScript)</b> que processa os eventos e calcula os horários livres:</p>
+<div class="codigo">// Calcula horários disponíveis nos próximos 7 dias
+const events = $input.all()[0].json.events || [];
+const horariosTrabalho = &#123; inicio: 8, fim: 18, intervaloInicio: 12, intervaloFim: 13 &#125;;
+const duracaoConsulta = 30; // minutos
+const vagasPorDia = &#123;&#125;;
+
+// Inicializar próximos 7 dias
+for (let d = 0; d &lt; 7; d++) &#123;
+    const dia = new Date();
+    dia.setDate(dia.getDate() + d);
+    if (dia.getDay() === 0) continue; // pular domingo
+    const key = dia.toLocaleDateString('pt-BR');
+    vagasPorDia[key] = [];
+    for (let h = horariosTrabalho.inicio; h &lt; horariosTrabalho.fim; h++) &#123;
+        if (h &gt;= horariosTrabalho.intervaloInicio &amp;&amp; h &lt; horariosTrabalho.intervaloFim) continue;
+        vagasPorDia[key].push(`$&#123;String(h).padStart(2,'0')&#125;:00`);
+    &#125;
+&#125;
+
+// Remover horários já ocupados
+events.forEach(evt =&gt; &#123;
+    if (evt.start &amp;&amp; evt.start.dateTime) &#123;
+        const dt = new Date(evt.start.dateTime);
+        const diaKey = dt.toLocaleDateString('pt-BR');
+        const hora = dt.toLocaleTimeString('pt-BR', &#123;hour:'2-digit', minute:'2-digit'&#125;);
+        if (vagasPorDia[diaKey]) &#123;
+            vagasPorDia[diaKey] = vagasPorDia[diaKey].filter(v =&gt; v !== hora);
+        &#125;
+    &#125;
+&#125;);
+
+// Formatar para resposta
+const resultado = Object.entries(vagasPorDia)
+    .filter(([_, vagas]) =&gt; vagas.length &gt; 0)
+    .slice(0, 3)
+    .map(([dia, vagas]) =&gt; `$&#123;dia&#125;: $&#123;vagas.slice(0, 5).join(', ')&#125;$&#123;vagas.length &gt; 5 ? '...' : ''&#125;`)
+    .join('\\n');
+
+return [&#123; json: &#123; disponibilidade: resultado, vagas: vagasPorDia &#125; &#125;];</div>
+
+<h2>6.7 — Nó 7: Responder via WhatsApp</h2>
+<p>Adicione o nó de envio do WhatsApp com a resposta formatada:</p>
+<table>
+  <tr><th>Parâmetro</th><th>Valor</th></tr>
+  <tr><td>Operation</td><td>Send Message</td></tr>
+  <tr><td>Phone</td><td><code>=&#123;&#123; $node["Edit Fields"].json.telefone &#125;&#125;</code></td></tr>
+  <tr><td>Text</td><td><code>=&#123;&#123; $json.resposta_ao_paciente &#125;&#125;</code></td></tr>
+</table>
+
+<!-- 7. WHATSAPP -->
+<div class="page-break"></div>
+<h1>7. CONFIGURAÇÃO DO WHATSAPP</h1>
+
+<h2>7.1 — Opção A: Evolution API (Gratuito, Self-Hosted)</h2>
+<p>A Evolution API é uma API open-source que se conecta ao WhatsApp Web (igual ao WhatsApp Web que você usa no computador). É a opção gratuita mais popular.</p>
+
+<div class="codigo"># Docker Compose para Evolution API
+cat &gt; docker-compose.yml &lt;&lt; 'EOF'
+version: '3.8'
+services:
+  evolution-api:
+    image: atendai/evolution-api:latest
+    container_name: evolution-api
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - AUTHENTICATION_API_KEY=sua-chave-secreta-aqui
+      - DATABASE_ENABLED=true
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    container_name: evolution-db
+    restart: always
+    environment:
+      POSTGRES_USER: evolution
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: evolution
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
+EOF
+
+docker compose up -d</div>
+
+<h3>Passos para conectar:</h3>
+<ol>
+  <li>Acesse <b>http://IP:8080</b> e faça login com a API key</li>
+  <li>Crie uma instância: <b>POST /instance/create</b> com nome 'clinica'</li>
+  <li>Escaneie o QR Code com o WhatsApp do número da clínica</li>
+  <li>Configure o webhook da instância para <b>http://n8n.seudominio.com/webhook/agente-clinica</b></li>
+  <li>Agora qualquer mensagem recebida no WhatsApp irá disparar o fluxo do n8n</li>
+</ol>
+
+<h2>7.2 — Opção B: WhatsApp Business API (Meta Cloud API)</h2>
+<p>Para clínicas maiores que precisam de maior volume, a API oficial da Meta é gratuita para as primeiras 1.000 conversas por mês.</p>
+<ol>
+  <li>Crie uma conta em <b>developers.facebook.com</b></li>
+  <li>Crie um app do tipo <b>Business</b></li>
+  <li>Adicione o produto <b>WhatsApp</b> ao app</li>
+  <li>Configure um número de telefone (pode ser o número da clínica)</li>
+  <li>Obtenha o <b>Access Token</b> e <b>Phone Number ID</b></li>
+  <li>No n8n, use o nó <b>WhatsApp Business Cloud</b> com esses dados</li>
+  <li>Configure o webhook URL para receber mensagens</li>
+</ol>
+
+<!-- 8. PROMPT -->
+<div class="page-break"></div>
+<h1>8. PROMPT DO AGENTE DE IA</h1>
+
+<p>Este é o <b>System Message</b> que você deve colocar no nó AI Agent do n8n. Ele define o comportamento e as regras do atendente virtual:</p>
+
+<div class="codigo">Você é o atendente virtual da Clínica [NOME DA CLÍNICA].
+Seu nome é Clara e você atende pacientes de forma simpática e profissional.
+
+REGRAS:
+- Responda SEMPRE em português brasileiro
+- Seja breve e objetivo (máximo 3 parágrafos)
+- Não forneça diagnósticos ou prescrições
+- Para dúvidas médicas, encaminhe para o médico
+- Horários de atendimento: Seg a Sex 08h-18h, Sáb 08h-12h
+- Endereço: [ENDEREÇO DA CLÍNICA]
+- Convênios aceitos: [LISTA DE CONVÊNIOS]
+
+INFORMAÇÃO DO PACIENTE:
+- Nome: &#123;&#123; nome_paciente &#125;&#125;
+- Telefone: &#123;&#123; telefone &#125;&#125;
+
+MENSAGEM RECEBIDA: &#123;&#123; mensagem &#125;&#125;
+
+TAREFAS POSSÍVEIS:
+
+1. AGENDAR: Identifique a especialidade e data/horário desejado.
+   Extraia: &#123; "intencao": "agendar", "especialidade": "...", "data_preferida": "...", "horario_preferido": "...", "urgencia": "normal|urgente" &#125;
+
+2. CANCELAR: Identifique qual consulta cancelar.
+   Extraia: &#123; "intencao": "cancelar", "data_consulta": "..." &#125;
+
+3. REMARCAR: Identifique consulta atual e novo horário.
+   Extraia: &#123; "intencao": "remarcar", "data_atual": "...", "nova_data": "..." &#125;
+
+4. CONSULTAR_HORARIOS: Mostre próximas vagas disponíveis.
+   Extraia: &#123; "intencao": "consultar_horarios", "dias": 7 &#125;
+
+5. DUVIDA: Responda a perguntas sobre horários, endereço, convênios, preparo.
+   Extraia: &#123; "intencao": "duvida", "topico": "..." &#125;
+
+6. OUTRO: Se não se encaixa acima.
+   Extraia: &#123; "intencao": "outro", "categoria": "..." &#125;
+
+Retorne em JSON:
+&#123;
+  "intencao": "...",
+  "resposta_ao_paciente": "mensagem humanizada de resposta",
+  "dados_extraidos": &#123; ... &#125;
+&#125;</div>
+
+<h2>Output Schema (para Structured Output):</h2>
+<div class="codigo">&#123;
+  "type": "object",
+  "properties": &#123;
+    "intencao": &#123; "type": "string", "enum": ["agendar", "cancelar", "remarcar", "consultar_horarios", "duvida", "outro"] &#125;,
+    "resposta_ao_paciente": &#123; "type": "string" &#125;,
+    "dados_extraidos": &#123; "type": "object" &#125;
+  &#125;,
+  "required": ["intencao", "resposta_ao_paciente"]
+&#125;</div>
+
+<!-- 9. TESTES -->
+<div class="page-break"></div>
+<h1>9. TESTES E VALIDAÇÃO</h1>
+
+<h2>9.1 — Testar o Webhook Manualmente</h2>
+<p>Antes de conectar ao WhatsApp, teste o webhook com curl:</p>
+<div class="codigo">curl -X POST https://n8n.seudominio.com/webhook/agente-clinica \
+  -H "Content-Type: application/json" \
+  -d '&#123;
+    "from": "5562999999999",
+    "contacts": [&#123;"profile": &#123;"name": "Maria Silva"&#125;&#125;],
+    "body": &#123;"message": "Olá, gostaria de agendar uma consulta para amanhã"&#125;
+  &#125;'</div>
+
+<h2>9.2 — Cenários de Teste</h2>
+<table>
+  <tr><th>#</th><th>Mensagem do Paciente</th><th>Intenção Esperada</th></tr>
+  <tr><td>1</td><td>"Gostaria de agendar consulta com Dr. João para quinta"</td><td>agendar</td></tr>
+  <tr><td>2</td><td>"Quais horários disponíveis para amanhã?"</td><td>consultar_horarios</td></tr>
+  <tr><td>3</td><td>"Preciso cancelar minha consulta de sexta"</td><td>cancelar</td></tr>
+  <tr><td>4</td><td>"A clínica atende pelo SUS?"</td><td>duvida</td></tr>
+  <tr><td>5</td><td>"Qual o endereço da clínica?"</td><td>duvida</td></tr>
+  <tr><td>6</td><td>"Quero remarcar para próxima semana"</td><td>remarcar</td></tr>
+  <tr><td>7</td><td>"Oi, tudo bem?" (saudação genérica)</td><td>outro / continuar</td></tr>
+</table>
+
+<h2>9.3 — Checklist de Validação</h2>
+<ul class="checklist">
+  <li>Webhook recebe mensagens (verificar no n8n: Execution Log)</li>
+  <li>IA classifica corretamente a intenção (&gt; 90% de acerto nos testes)</li>
+  <li>Google Calendar: consulta retorna eventos corretamente</li>
+  <li>Google Calendar: criação de evento funciona (verificar no Calendar)</li>
+  <li>WhatsApp envia mensagem de resposta</li>
+  <li>Horários disponíveis são calculados corretamente</li>
+  <li>Cancelamento remove evento do calendário</li>
+  <li>Lembrete automático é disparado 24h antes</li>
+  <li>Flow não quebra com mensagens inesperadas</li>
+</ul>
+
+<!-- 10. TABELA DE PREÇOS -->
+<div class="page-break"></div>
+<h1>10. TABELA DE PREÇOS — QUANTO COBRAR</h1>
+
+<p>Valores praticados no mercado brasileiro para implementação de agentes de IA para clínicas e consultórios médicos em 2025/2026:</p>
+
+<table>
+  <tr><th>SERVIÇO</th><th>MÍNIMO</th><th>MÉDIO</th><th>PREMIUM</th></tr>
+  <tr><td>Configuração básica (agendar + horários)</td><td>R$ 1.500</td><td>R$ 3.000</td><td>R$ 5.000</td></tr>
+  <tr><td>Fluxo completo (agendar/cancelar/remarcar)</td><td>R$ 2.500</td><td>R$ 5.000</td><td>R$ 8.000</td></tr>
+  <tr><td>+ WhatsApp Business API integrado</td><td>+ R$ 500</td><td>+ R$ 1.000</td><td>+ R$ 2.000</td></tr>
+  <tr><td>+ Lembrete automático (24h antes)</td><td>+ R$ 300</td><td>+ R$ 800</td><td>+ R$ 1.500</td></tr>
+  <tr><td>+ Integração com sistema de gestão</td><td>+ R$ 1.000</td><td>+ R$ 2.500</td><td>+ R$ 5.000</td></tr>
+  <tr><td>+ Dashboard de métricas/relatórios</td><td>+ R$ 800</td><td>+ R$ 1.500</td><td>+ R$ 3.000</td></tr>
+  <tr><td>Suporte mensal (manutenção + ajustes)</td><td>R$ 300/mês</td><td>R$ 700/mês</td><td>R$ 1.500/mês</td></tr>
+  <tr class="total-row"><td colspan="4"></td></tr>
+  <tr class="total-row"><td>TOTAL (implementação completa)</td><td>R$ 4.100</td><td>R$ 9.300</td><td>R$ 15.500</td></tr>
+</table>
+
+<h2>Faixa de preços por perfil do cliente:</h2>
+<table>
+  <tr><th>PERFIL</th><th>DESCRIÇÃO</th><th>PREÇO SUGERIDO</th></tr>
+  <tr><td>Consultório pequeno</td><td>1 médico, até 20 pacientes/dia</td><td>R$ 1.500 a R$ 3.000</td></tr>
+  <tr><td>Clínica médica</td><td>2-5 médicos, múltiplas especialidades</td><td>R$ 3.000 a R$ 8.000</td></tr>
+  <tr><td>Clínica grande / Rede</td><td>5+ médicos, alta demanda</td><td>R$ 8.000 a R$ 15.000+</td></tr>
+</table>
+
+<div class="destaque">
+  <b>💰 Dica:</b> Além da implementação, cobre uma mensalidade de suporte (R$ 300-700/mês) para ajustes, atualizações e monitoramento. Isso gera receita recorrente!
+</div>
+
+<div class="aviso">
+  <b>⚠️ Custos de infraestrutura para o cliente:</b> VPS (R$ 60-120/mês), WhatsApp Business API (gratuito até 1.000 conversas/mês), Google Calendar API (gratuito). Total: ~R$ 60-120/mês.
+</div>
+
+<!-- 11. DICAS AVANÇADAS -->
+<div class="page-break"></div>
+<h1>11. DICAS AVANÇADAS</h1>
+
+<ol>
+  <li><b>1. Evite spam do WhatsApp:</b> O WhatsApp limita mensagens por hora. Use o n8n para controlar rate limiting (máximo 1 mensagem por paciente a cada 30 segundos). Mensagens em massa podem banir o número.</li>
+  <li><b>2. Persistência de contexto:</b> Use o n8n Memory Buffer ou um banco de dados para lembrar do contexto da conversa. Ex: se o paciente disse que quer agendar para quinta, guarde isso para a próxima mensagem.</li>
+  <li><b>3. Calendário por médico:</b> Se a clínica tem vários médicos, crie um calendário separado no Google Calendar para cada um. O agente deve perguntar ou detectar qual médico o paciente deseja.</li>
+  <li><b>4. Confirmação em duas etapas:</b> Após o agendamento, envie: "Consulta agendada com Dr. X para [data] às [horário]. Responda SIM para confirmar ou CANCELAR para desmarcar."</li>
+  <li><b>5. Horários de almoço:</b> Configure o cálculo de vagas para respeitar o intervalo de almoço e fim de expediente.</li>
+  <li><b>6. Fuso horário:</b> Sempre use America/Sao_Paulo no n8n e no Google Calendar. Configure TZ=America/Sao_Paulo no Docker.</li>
+  <li><b>7. Prompt dinâmico:</b> Use variáveis do n8n no prompt (como &#123;&#123;nome_paciente&#125;&#125;) para personalizar as respostas.</li>
+  <li><b>8. Módulo de dúvidas frequentes:</b> Crie um banco de respostas para perguntas comuns (endereço, convênios, preparo) para reduzir custos de IA.</li>
+  <li><b>9. Human-in-the-loop:</b> Configure um fallback: se a IA não entender (intencao = 'outro'), encaminhe para um atendente humano.</li>
+  <li><b>10. Monitoramento:</b> Use o n8n Executions Log para monitorar em tempo real. Configure alertas (email/Telegram) quando o fluxo falhar.</li>
+</ol>
+
+<div class="destaque">
+  <b>📌 NOTA FINAL:</b> Este agente foi projetado para ser 100% gratuito (free-tier). Os custos são apenas do servidor (VPS ~R$ 60-120/mês). Google Calendar API é gratuito com quotas de 1 milhão de requisições/dia. WhatsApp Business API é gratuito para até 1.000 conversas/mês. Groq API é gratuito com limites generosos. <b>Você pode cobrar de R$ 1.500 a R$ 15.000 pela implementação completa.</b>
+</div>
+
+</body>
+</html>

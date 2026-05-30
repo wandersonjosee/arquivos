@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Studio Sublime",
+    "telefone": "(62) 99570-1675",
+    "endereco": "Rua Dona Getúlia, 15 - Bairro Independência Mansões, Aparecida de Goiânia - GO",
+    "bairro": "Independência Mansões",
+    "tipo": "salão de beleza",
+    "avaliacao": "4.0"
+  },
+  {
+    "nome": "Dina Cabeleireira",
+    "telefone": "(62) 99451-7993",
+    "endereco": "Bairro Independência Mansões, Aparecida de Goiânia - GO",
+    "bairro": "Independência Mansões",
+    "tipo": "salão de beleza",
+    "avaliacao": "4.9"
+  },
+  {
+    "nome": "Studio divas",
+    "telefone": "(62) 99387-1166",
+    "endereco": "Praca Jose Bonifácio - Bairro Independência Mansões, Aparecida de Goiânia - GO",
+    "bairro": "Independência Mansões",
+    "tipo": "salão de beleza",
+    "avaliacao": "5.0"
+  }
+]
