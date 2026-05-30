@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Guia Completo: Agente de IA para WhatsApp com n8n + Evolution API</title>
+<style>
+  @page { size: A4; margin: 2cm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 11pt; color: #1a202c; line-height: 1.6; }
+  
+  .capa { text-align: center; padding-top: 50px; page-break-after: always; }
+  .capa .emoji { font-size: 72px; margin-bottom: 10px; }
+  .capa h1 { font-size: 26pt; color: #1a365d; margin-bottom: 8px; line-height: 1.2; }
+  .capa h2 { font-size: 16pt; color: #2b6cb0; margin-bottom: 6px; font-weight: 400; }
+  .capa .sub { font-size: 11pt; color: #718096; margin-bottom: 30px; }
+  .capa hr { border: none; border-top: 2px solid #2b6cb0; margin: 15px auto; width: 200px; }
+  
+  .info-box { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px 20px; margin: 15px 0; }
+  .info-box table { width: 100%; border-collapse: collapse; }
+  .info-box td { padding: 6px 10px; border-bottom: 1px solid #e2e8f0; font-size: 10pt; }
+  .info-box td:first-child { font-weight: bold; color: #1a365d; width: 150px; }
+  
+  h1 { font-size: 20pt; color: #1a365d; margin-top: 24px; margin-bottom: 10px; border-bottom: 2px solid #2b6cb0; padding-bottom: 6px; page-break-after: avoid; }
+  h2 { font-size: 15pt; color: #2b6cb0; margin-top: 18px; margin-bottom: 8px; page-break-after: avoid; }
+  h3 { font-size: 12pt; color: #38a169; margin-top: 12px; margin-bottom: 6px; }
+  
+  p { margin-bottom: 8px; text-align: justify; }
+  
+  ul, ol { margin: 6px 0 10px 24px; }
+  li { margin-bottom: 4px; }
+  
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9.5pt; }
+  th { background: #1a365d; color: white; padding: 8px 10px; text-align: center; font-size: 9.5pt; }
+  td { padding: 7px 10px; border: 1px solid #e2e8f0; }
+  tr:nth-child(even) { background: #f7fafc; }
+  
+  .destaque { background: #f0fff4; border: 1px solid #38a169; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+  .aviso { background: #fffff0; border: 1px solid #dd6b20; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+  .perigo { background: #fff5f5; border: 1px solid #e53e3e; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+  
+  .codigo { background: #1a202c; color: #68d391; font-family: 'Consolas', 'Courier New', monospace; font-size: 9pt; padding: 14px 18px; border-radius: 6px; margin: 10px 0; white-space: pre-wrap; word-wrap: break-word; line-height: 1.5; overflow-x: auto; }
+  .codigo .comentario { color: #718096; }
+  .codigo .chave { color: #f6ad55; }
+  .codigo .string { color: #9ae6b4; }
+  .codigo .numero { color: #63b3ed; }
+  
+  .page-break { page-break-after: always; }
+  
+  .sumario { background: #ebf8ff; border: 1px solid #bee3f8; border-radius: 8px; padding: 15px 20px; margin: 15px 0; }
+  .sumario li { margin-bottom: 3px; }
+  
+  .checklist li { list-style: none; margin-bottom: 4px; }
+  .checklist li:before { content: "☐ "; color: #38a169; }
+  
+  .comparativo { display: flex; gap: 10px; margin: 10px 0; }
+  .comparativo .col { flex: 1; }
+  
+  .passo { background: #edf2f7; border-left: 4px solid #2b6cb0; padding: 10px 14px; margin: 8px 0; border-radius: 0 6px 6px 0; }
+  .passo-num { display: inline-block; background: #2b6cb0; color: white; width: 24px; height: 24px; border-radius: 50%; text-align: center; line-height: 24px; font-weight: bold; font-size: 10pt; margin-right: 8px; }
+  
+  .total-row { background: #ebf8ff !important; font-weight: bold; }
+}
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="capa">
+  <div class="emoji">🤖💬</div>
+  <h1>GUIA COMPLETO</h1>
+  <h1>Agente de IA</h1>
+  <h1>para WhatsApp</h1>
+  <hr>
+  <h2>n8n + Evolution API + Groq (Llama 3)</h2>
+  <p class="sub">Automação inteligente de atendimento via WhatsApp<br>100% gratuito e self-hosted</p>
+  <hr>
+  <br><br>
+  <div class="info-box" style="max-width: 520px; margin: 0 auto; text-align: left;">
+    <table>
+      <tr><td>Stack</td><td>n8n + Evolution API + Groq API (Llama 3.3)</td></tr>
+      <tr><td>Custo</td><td>GRATUITO (self-hosted)</td></tr>
+      <tr><td>Servidor</td><td>VPS 2vCPU / 4GB RAM (~R$60/mês)</td></tr>
+      <tr><td>Dificuldade</td><td>Intermediário — Sem código (no-code)</td></tr>
+      <tr><td>Tempo de setup</td><td>2 a 4 horas</td></tr>
+    </table>
+  </div>
+  <br>
+  <p style="color: #a0aec0; font-size: 10pt;">Versão: Maio/2026</p>
+</div>
+
+<!-- SUMÁRIO -->
+<div class="page-break"></div>
+<h1>SUMÁRIO</h1>
+<div class="sumario">
+  <ol>
+    <li>Visão Geral — O que vamos construir</li>
+    <li>Arquitetura do Sistema</li>
+    <li>Pré-requisitos</li>
+    <li>Passo 1: Servidor VPS</li>
+    <li>Passo 2: Instalar o n8n (Docker)</li>
+    <li>Passo 3: Instalar Evolution API (WhatsApp)</li>
+    <li>Passo 4: Conectar WhatsApp (QR Code)</li>
+    <li>Passo 5: Configurar Groq API (IA Gratuita)</li>
+    <li>Passo 6: Criar o Fluxo no n8n</li>
+    <li>Passo 7: Configurar o Webhook</li>
+    <li>Passo 8: Prompt do Agente de IA</li>
+    <li>Passo 9: Testar e Validar</li>
+    <li>Passo 10: Domínio e SSL (Produção)</li>
+    <li>Dicas Avançadas e Boas Práticas</li>
+    <li>Tabela de Preços — Quanto Cobrar</li>
+    <li>Troubleshooting — Problemas Comuns</li>
+  </ol>
+</div>
+
+<!-- 1. VISÃO GERAL -->
+<div class="page-break"></div>
+<h1>1. VISÃO GERAL — O QUE VAMOS CONSTRUIR</h1>
+
+<p>Este guia ensina a criar um <b>agente de IA completo para WhatsApp</b> que funciona como atendente virtual 24/7. O agente recebe mensagens, entende a intenção do cliente usando IA (Llama 3.3 via Groq), consulta dados, responde automaticamente e pode executar ações — tudo sem escrever código.</p>
+
+<h2>O que o agente faz:</h2>
+<ol>
+  <li><b>Recebe mensagens</b> de qualquer pessoa no WhatsApp</li>
+  <li><b>Entende a intenção</b> usando IA (pergunta, compra, suporte, saudação)</li>
+  <li><b>Responde automaticamente</b> com base no contexto</li>
+  <li><b>Consulta banco de dados</b> (pedidos, agendamentos, produtos)</li>
+  <li><b>Encaminha para humano</b> quando não souber responder</li>
+  <li><b>Envia mensagens proativas</b> (lembretes, promoções)</li>
+</ol>
+
+<h2>Casos de uso:</h2>
+<table>
+  <tr><th>Negócio</th><th>Uso do Agente</th></tr>
+  <tr><td>Clínica médica</td><td>Agendar/consultar/cancelar consultas</td></tr>
+  <tr><td>Restaurante</td><td>Cardápio, pedidos, horários</td></tr>
+  <tr><td>E-commerce</td><td>Status de pedido, trocas, dúvidas</td></tr>
+  <tr><td>Advocacia</td><td>Triagem de clientes, agendamento</td></tr>
+  <tr><td>Imobiliária</td><td>Imóveis disponíveis, visitas</td></tr>
+  <tr><td>Salão de beleza</td><td>Agendamento, serviços, preços</td></tr>
+</table>
+
+<div class="destaque">
+  <b>💡 Por que esta stack?</b><br>
+  • <b>n8n</b> — Open-source, visual, sem código. 400+ integrações.<br>
+  • <b>Evolution API</b> — Open-source, conecta ao WhatsApp via QR Code. Sem depender da API oficial cara da Meta.<br>
+  • <b>Groq</b> — API de IA gratuita com Llama 3.3 70B. Muito rápida.<br>
+  <b>Custo total: R$ 0 (só o servidor ~R$ 60/mês)</b>
+</div>
+
+<!-- 2. ARQUITETURA -->
+<div class="page-break"></div>
+<h1>2. ARQUITETURA DO SISTEMA</h1>
+
+<pre style="background:#f7fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; font-family:monospace; font-size:10pt; line-height:1.8;">
+┌─────────────┐     ┌──────────────┐     ┌───────────────┐
+│  CLIENTE    │     │  EVOLUTION   │     │     N8N       │
+│  WHATSAPP   │────▶│     API      │────▶│  WEBHOOK      │
+│             │◀────│  (QR Code)   │◀────│               │
+└─────────────┘     └──────────────┘     └───────┬───────┘
+                                                  │
+                                          ┌───────▼───────┐
+                                          │  AI AGENT     │
+                                          │  (Groq/Llama) │
+                                          └───────┬───────┘
+                                                  │
+                                          ┌───────▼───────┐
+                                          │   AÇÕES       │
+                                          │ • Responder   │
+                                          │ • Consultar DB│
+                                          │ • Agendar     │
+                                          │ • Encaminhar  │
+                                          └───────────────┘
+</pre>
+
+<h2>Fluxo completo:</h2>
+<ol>
+  <li>Cliente envia mensagem no WhatsApp</li>
+  <li>Evolution API recebe e envia via Webhook para o n8n</li>
+  <li>n8n processa a mensagem e envia para o AI Agent</li>
+  <li>IA (Groq/Llama) analisa e decide a resposta</li>
+  <li>n8n executa a ação (responder, consultar DB, agendar)</li>
+  <li>Mensagem de volta via Evolution API → WhatsApp do cliente</ol>
+
+<table>
+  <tr><th>Serviço</th><th>Porta</th><th>Função</th></tr>
+  <tr><td>Evolution API</td><td>8080</td><td>Conecta WhatsApp Web, envia/recebe mensagens</td></tr>
+  <tr><td>n8n</td><td>5678</td><td>Motor de automação, processa fluxos</td></tr>
+  <tr><td>PostgreSQL</td><td>5432</td><td>Banco de dados da Evolution API</td></tr>
+  <tr><td>Redis</td><td>6379</td><td>Cache e sessões</td></tr>
+</table>
+
+<!-- 3. PRÉ-REQUISITOS -->
+<div class="page-break"></div>
+<h1>3. PRÉ-REQUISITOS</h1>
+
+<h2>3.1 — Servidor VPS</h2>
+<table>
+  <tr><th>Especificação</th><th>Mínimo</th><th>Recomendado</th></tr>
+  <tr><td>CPU</td><td>2 vCPU</td><td>4 vCPU</td></tr>
+  <tr><td>RAM</td><td>4 GB</td><td>8 GB</td></tr>
+  <tr><td>Disco</td><td>40 GB SSD</td><td>80 GB SSD</td></tr>
+  <tr><td>OS</td><td>Ubuntu 22.04 LTS</td><td>Ubuntu 24.04 LTS</td></tr>
+  <tr><td>Custo</td><td>~R$ 60/mês</td><td>~R$ 120/mês</td></tr>
+</table>
+<p><b>Provedores recomendados:</b> DigitalOcean, Vultr, Hetzner, Contabo, Locaweb</p>
+
+<h2>3.2 — Contas gratuitas necessárias</h2>
+<table>
+  <tr><th>Serviço</th><th>Finalidade</th><th>Como criar</th></tr>
+  <tr><td>Groq Cloud</td><td>API de IA (Llama 3.3)</td><td>console.groq.com — Sign up grátis</td></tr>
+  <tr><td>n8n (self-host)</td><td>Motor de automação</td><td>Instalação via Docker (abaixo)</td></tr>
+  <tr><td>Domínio (opcional)</td><td>SSL + acesso externo</td><td>Registro br (~R$ 40/ano) ou Freenom grátis</td></tr>
+</table>
+
+<h2>3.3 — Número de WhatsApp</h2>
+<div class="aviso">
+  <b>⚠️ Importante:</b> Use um número de WhatsApp dedicado (chip separado). Se usar seu número pessoal, ele será "consumido" pelo bot. Recomenda-se um chip pré-pago exclusivo.
+</div>
+
+<!-- 4. SERVIDOR VPS -->
+<div class="page-break"></div>
+<h1>4. PASSO 1: CONFIGURAR O SERVIDOR VPS</h1>
+
+<h2>4.1 — Conectar ao servidor via SSH</h2>
+<div class="codigo">ssh root@IP_DO_SERVIDOR</div>
+
+<h2>4.2 — Atualizar o sistema</h2>
+<div class="codigo">apt update && apt upgrade -y</div>
+
+<h2>4.3 — Instalar Docker e Docker Compose</h2>
+<div class="codigo"># Instalar Docker
+curl -fsSL https://get.docker.com | sh
+
+# Habilitar Docker no boot
+systemctl enable docker
+systemctl start docker
+
+# Instalar Docker Compose
+apt install docker-compose-plugin -y
+
+# Verificar
+docker --version
+docker compose version</div>
+
+<h2>4.4 — Configurar Firewall (UFW)</h2>
+<div class="codigo">ufw allow 22/tcp      # SSH
+ufw allow 80/tcp      # HTTP
+ufw allow 443/tcp     # HTTPS
+ufw allow 5678/tcp    # n8n
+ufw allow 8080/tcp    # Evolution API
+ufw enable</div>
+
+<!-- 5. N8N -->
+<div class="page-break"></div>
+<h1>5. PASSO 2: INSTALAR O N8N</h1>
+
+<h2>5.1 — Criar diretório e docker-compose.yml</h2>
+<div class="codigo">mkdir -p /opt/n8n && cd /opt/n8n
+
+cat &gt; docker-compose.yml &lt;&lt; 'EOF'
+version: '3.8'
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=n8n.seudominio.com
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n.seudominio.com/
+      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - TZ=America/Sao_Paulo
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+volumes:
+  n8n_data:
+EOF</div>
+
+<h2>5.2 — Subir o n8n</h2>
+<div class="codigo">docker compose up -d
+
+# Verificar se está rodando
+docker logs n8n --tail 20</div>
+
+<h2>5.3 — Acessar a interface</h2>
+<div class="destaque">
+  Acesse: <b>http://IP_DO_SERVIDOR:5678</b><br>
+  Crie a conta de administrador na primeira vez.
+</div>
+
+<!-- 6. EVOLUTION API -->
+<div class="page-break"></div>
+<h1>6. PASSO 3: INSTALAR EVOLUTION API</h1>
+
+<h2>6.1 — Criar diretório e docker-compose.yml</h2>
+<div class="codigo">mkdir -p /opt/evolution && cd /opt/evolution</div>
+
+<h2>6.2 — Criar o docker-compose.yml completo</h2>
+<div class="codigo">cat &gt; docker-compose.yml &lt;&lt; 'EOF'
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    container_name: evolution-db
+    restart: always
+    environment:
+      POSTGRES_USER: evolution
+      POSTGRES_PASSWORD: evolution2025
+      POSTGRES_DB: evolution
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    container_name: evolution-redis
+    restart: always
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+  evolution-api:
+    image: atendai/evolution-api:latest
+    container_name: evolution-api
+    restart: always
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_TYPE=http
+      - SERVER_PORT=8080
+      - CORS_ORIGIN=*
+      - CORS_METHODS=POST,GET,PUT,DELETE
+      - CORS_CREDENTIALS=true
+      - DEL_INSTANCE=false
+      - DATABASE_ENABLED=true
+      - DATABASE_PROVIDER=postgresql
+      - DATABASE_CONNECTION_URI=postgresql://evolution:evolution2025@postgres:5432/evolution
+      - REDIS_ENABLED=true
+      - REDIS_URI=redis://redis:6379
+      - AUTHENTICATION_TYPE=apikey
+      - AUTHENTICATION_API_KEY=sua-chave-secreta-aqui-mude-isso
+      - WEBHOOK_GLOBAL_ENABLED=false
+      - WEBHOOK_EVENTS_MESSAGES_UPSERT=true
+      - WEBHOOK_EVENTS_MESSAGES_UPDATE=true
+    volumes:
+      - evolution_data:/evolution/store
+
+volumes:
+  pg_data:
+  redis_data:
+  evolution_data:
+EOF</div>
+
+<div class="aviso">
+  <b>🔑 IMPORTANTE:</b> Altere <b>AUTHENTICATION_API_KEY</b> para uma chave segura sua!<br>
+  Exemplo: <code>minha-chave-super-secreta-2026</code><br>
+  Guarde essa chave — você vai precisar dela para conectar ao n8n.
+</div>
+
+<h2>6.3 — Subir a Evolution API</h2>
+<div class="codigo">docker compose up -d
+
+# Verificar logs
+docker logs evolution-api --tail 30</div>
+
+<div class="destaque">
+  Aguarde até ver: <b>"Server is running on port 8080"</b> nos logs.
+</div>
+
+<!-- 7. CONECTAR WHATSAPP -->
+<div class="page-break"></div>
+<h1>7. PASSO 4: CONECTAR O WHATSAPP (QR CODE)</h1>
+
+<h2>7.1 — Acessar o Manager da Evolution API</h2>
+<div class="codigo">http://IP_DO_SERVIDOR:8080/manager</div>
+
+<h2>7.2 — Criar uma instância</h2>
+<ol>
+  <li>Abra o <b>Postman</b> ou use o <b>curl</b> diretamente</li>
+  <li>Crie a instância com o seguinte comando:</li>
+</ol>
+
+<div class="codigo">curl -X POST http://IP_DO_SERVIDOR:8080/instance/create \
+  -H "Content-Type: application/json" \
+  -H "apikey: sua-chave-secreta-aqui-mude-isso" \
+  -d '{
+    "instanceName": "meu-agente",
+    "token": "",
+    "number": "",
+    "qrcode": true,
+    "integration": "WHATSAPP-BAILEYS",
+    "reject_call": true,
+    "msg_call": "",
+    "groups_ignore": true,
+    "always_online": true,
+    "read_messages": true,
+    "read_status": true
+  }'</div>
+
+<h2>7.3 — Ler o QR Code</h2>
+<div class="codigo"># Gerar/obter o QR Code
+curl -X GET "http://IP:8080/instance/connect/meu-agente" \
+  -H "apikey: SUA_CHAVE"</div>
+
+<p>A resposta conterá uma imagem em base64. Você pode:</p>
+<ul>
+  <li>Salvar como imagem e escanear direto</li>
+  <li>Usar o <a href="https://web.whatsapp.com"><b>Postman</b></a> com a interface visual</li>
+  <li>Acessar no browser: <b>http://IP:8080/manager</b></li>
+</ul>
+
+<h2>7.4 — Escanear com o WhatsApp</h2>
+<ol>
+  <li>Abra o <b>WhatsApp</b> no telefone com o chip dedicado</li>
+  <li>Vá em <b>Configurações</b> → <b>Aparelhos conectados</b></li>
+  <li>Toque em <b>Conectar um aparelho</b></li>
+  <li>Escaneie o QR Code gerado pela Evolution API</li>
+  <li>Aguarde a conexão (pode levar 30-60 segundos)</li>
+</ol>
+
+<h2>7.5 — Verificar conexão</h2>
+<div class="codigo">curl -X GET "http://IP:8080/instance/connectionState/meu-agente" \
+  -H "apikey: SUA_CHAVE"</div>
+
+<div class="destaque">
+  <b>✅ Sucesso:</b> A resposta deve conter <code>"state": "open"</code><br>
+  <b>🔄 Conectando:</b> <code>"state": "connecting"</code> — aguarde e tente novamente<br>
+  <b>❌ Falha:</b> Gere um novo QR Code repetindo o passo 7.3
+</div>
+
+<!-- 8. GROQ API -->
+<div class="page-break"></div>
+<h1>8. PASSO 5: CONFIGURAR GROQ API (IA GRATUITA)</h1>
+
+<h2>8.1 — Criar conta no Groq</h2>
+<ol>
+  <li>Acesse: <b>console.groq.com</b></li>
+  <li>Clique em <b>"Sign Up"</b> — pode logar com GitHub ou email</li>
+  <li>Confirme o email</li>
+</ol>
+
+<h2>8.2 — Gerar API Key</h2>
+<ol>
+  <li>No painel do Groq, vá em <b>"API Keys"</b> (menu lateral)</li>
+  <li>Clique em <b>"Create API Key"</b></li>
+  <li>Dê um nome: <b>"n8n-agente-whatsapp"</b></li>
+  <li>Copie a key (começa com <code>gsk_...</code>)</li>
+</ol>
+
+<h2>8.3 — Escolher o modelo</h2>
+<table>
+  <tr><th>Modelo</th><th>Velocidade</th><th>Qualidade</th><th>Gratuito</th></tr>
+  <tr><td><b>llama-3.3-70b-versatile</b></td><td>⚡⚡⚡ Muito rápida</td><td>⭐⭐⭐⭐ Excelente</td><td>✅ Sim</td></tr>
+  <tr><td>llama-3.1-8b-instant</td><td>⚡⚡⚡⚡ Ultra rápida</td><td>⭐⭐⭐ Boa</td><td>✅ Sim</td></tr>
+  <tr><td>mixtral-8x7b-32768</td><td>⚡⚡ Rápida</td><td>⭐⭐⭐⭐ Excelente</td><td>✅ Sim</td></tr>
+  <tr><td>gemma2-9b-it</td><td>⚡⚡⚡ Rápida</td><td>⭐⭐⭐ Boa</td><td>✅ Sim</td></tr>
+</table>
+<div class="destaque">
+  <b>Recomendação:</b> Use <b>llama-3.3-70b-versatile</b> — melhor custo/benefício. Muito rápido e inteligente para atendimento.
+</div>
+
+<h2>8.4 — Configurar credencial no n8n</h2>
+<ol>
+  <li>No n8n, vá em <b>"Settings"</b> (engrenagem) → <b>"Credentials"</b></li>
+  <li>Clique em <b>"Add Credential"</b></li>
+  <li>Pesquise por <b>"Groq"</b> ou <b>"OpenAI"</b></li>
+  <li>Cole a API key do Groq</li>
+  <li>Se usar "OpenAI", ajuste a base URL para: <b>https://api.groq.com/openai/v1</b></li>
+  <li>Salve com nome: <b>"Groq - Agente WhatsApp"</b></li>
+</ol>
+
+<!-- 9. CRIAR O FLUXO -->
+<div class="page-break"></div>
+<h1>9. PASSO 6: CRIAR O FLUXO NO N8N</h1>
+
+<h2>9.1 — Novo workflow</h2>
+<ol>
+  <li>No n8n, clique em <b>"Create Workflow"</b></li>
+  <li>Nomeie: <b>"Agente WhatsApp - Atendimento"</b></li>
+</ol>
+
+<h2>9.2 — Nó 1: Webhook (receber mensagens)</h2>
+<p>Adicione um nó <b>"Webhook"</b> como trigger:</p>
+<table>
+  <tr><th>Parâmetro</th><th>Valor</th></tr>
+  <tr><td>Method</td><td>POST</td></tr>
+  <tr><td>Path</td><td>webhook/whatsapp-agente</td></tr>
+  <tr><td>Authentication</td><td>Header Auth → Nome: apikey, Value: sua-chave-evolution</td></tr>
+</table>
+<div class="destaque">
+  URL do Webhook: <b>https://n8n.seudominio.com/webhook/whatsapp-agente</b><br>
+  Guarde essa URL — vai configurar na Evolution API depois.
+</div>
+
+<h2>9.3 — Nó 2: Extrair campos da mensagem</h2>
+<p>Adicione um nó <b>"Edit Fields (Set)"</b>:</p>
+<div class="codigo"># Campos para extrair:
+telefone = {{ $json.data.key.remoteJid.replace('@s.whatsapp.net', '') }}
+nome = {{ $json.data.pushName || 'Cliente' }}
+mensagem = {{ $json.data.message.conversation || $json.data.message.extendedTextMessage?.text || '' }}
+instance = {{ $json.instance }}
+tipo = {{ $json.event }}
+
+# Expressão completa no n8n:
+telefone: ={{ $json.data?.key?.remoteJid?.replace('@s.whatsapp.net', '') || '' }}
+mensagem: ={{ $json.data?.message?.conversation || $json.data?.message?.extendedTextMessage?.text || '' }}
+nome: ={{ $json.data?.pushName || 'Cliente' }}</div>
+
+<h2>9.4 — Nó 3: AI Agent</h2>
+<p>Adicione um nó <b>"AI Agent"</b>:</p>
+<table>
+  <tr><th>Parâmetro</th><th>Valor</th></tr>
+  <tr><td>Model</td><td>Groq — llama-3.3-70b-versatile</td></tr>
+  <tr><td>Temperature</td><td>0.4 (criativo mas consistente)</td></tr>
+  <tr><td>System Message</td><td>Veja Seção 11 (Prompt)</td></tr>
+  <tr><td>Prompt (User)</td><td>={{ $json.mensagem }}</td></tr>
+</table>
+
+<h2>9.5 — Nó 4: Enviar resposta</h2>
+<p>Adicione um nó <b>"HTTP Request"</b> para enviar a resposta de volta:</p>
+<table>
+  <tr><th>Parâmetro</th><th>Valor</th></tr>
+  <tr><td>Method</td><td>POST</td></tr>
+  <tr><td>URL</td><td>http://SEU_IP:8080/message/text/meu-agente</td></tr>
+  <tr><td>Authentication</td><td>Header: apikey = SUA_CHAVE_EVOLUTION</td></tr>
+  <tr><td>Body (JSON)</td><td>Veja abaixo</td></tr>
+</table>
+
+<div class="codigo">{
+  "number": "={{ $('Edit Fields').json.telefone }}",
+  "text": "={{ $json.output || $json.text || 'Desculpe, não entendi. Pode repetir?' }}",
+  "delay": 1000,
+  "linkPreview": false
+}</div>
+
+<!-- 10. WEBHOOK -->
+<div class="page-break"></div>
+<h1>10. PASSO 7: CONECTAR EVOLUTION → N8N</h2>
+
+<h2>10.1 — Configurar webhook no n8n</h2>
+<p>No mesmo nó Webhook (Passo 9.2), copie a URL de Produção.</p>
+
+<h2>10.2 — Registrar webhook na Evolution API</h2>
+<div class="codigo">curl -X PUT http://IP_DO_SERVIDOR:8080/webhook/set/meu-agente \
+  -H "Content-Type: application/json" \
+  -H "apikey: SUA_CHAVE_EVOLUTION" \
+  -d '{
+    "url": "https://n8n.seudominio.com/webhook/whatsapp-agente",
+    "webhook_by_server": true,
+    "webhook_base64": false,
+    "events": {
+      "messages.upsert": true,
+      "messages.update": false,
+      "connection.update": true
+    }
+  }'</div>
+
+<h2>10.3 — Verificar se o webhook está ativo</h2>
+<div class="codigo">curl -X GET http://IP_DO_SERVIDOR:8080/webhook/find/meu-agente \
+  -H "apikey: SUA_CHAVE_EVOLUTION"</div>
+<p>A resposta deve mostrar a URL configurada.</p>
+
+<!-- 11. PROMPT -->
+<div class="page-break"></div>
+<h1>11. PASSO 8: PROMPT DO AGENTE DE IA</h1>
+
+<p>Este é o <b>System Message</b> que define o comportamento do agente. Ajuste conforme seu negócio:</p>
+
+<div class="codigo">Você é o atendente virtual da empresa [NOME DA EMPRESA]. 
+Seu nome é [NOME DO AGENTE] e você atende clientes pelo WhatsApp de forma 
+simpática, profissional e eficiente.
+
+=== REGRAS ===
+• Responda SEMPRE em português brasileiro
+• Seja breve (máximo 3-4 linhas por mensagem)
+• Use emojis com moderação para ser amigável
+• NUNCA forneça informações falsas ou invente dados
+• Se não souber responda: "Vou encaminhar para um atendente humano"
+• Não peça dados sensíveis (senhas, cartões) pelo WhatsApp
+
+=== INFORMAÇÕES DA EMPRESA ===
+Nome: [NOME]
+Endereço: [ENDEREÇO]
+Horário: [HORÁRIO DE FUNCIONAMENTO]
+Telefone: [TEFONE]
+Serviços: [LISTA DE SERVIÇOS/PRODUTOS]
+Preços: [PREÇOS OU "Solicite um orçamento"]
+
+=== FLUXO DE ATENDIMENTO ===
+1. SAUDAÇÃO: Cumprimente e pergunte como pode ajudar
+2. ENTENDIMENTO: Identifique o que o cliente quer
+3. AÇÃO: Responda, agende, consulte ou encaminhe
+4. CONFIRMAÇÃO: Confirme se resolveu a dúvida
+5. DESPEDIDA: Agradeça e se disponha para mais ajuda
+
+=== CASOS ESPECIAIS ===
+• Se for reclamação: "Entendo sua frustração. Vou encaminhar imediatamente."
+• Se pedir preço: Informe ou peça para visitar o site/catalogo
+• Se quiser agendar: Peça nome, data preferencial e serviço desejado
+• Se for spam/indesejado: Ignore educadament
+
+MENSAGEM DO CLIENTE: {{ $json.mensagem }}
+NOME DO CLIENTE: {{ $json.nome }}</div>
+
+<!-- 12. TESTES -->
+<div class="page-break"></div>
+<h1>12. PASSO 9: TESTAR E VALIDAR</h1>
+
+<h2>9.1 — Testar o webhook manualmente</h2>
+<div class="codigo">curl -X POST https://n8n.seudominio.com/webhook/whatsapp-agente \
+  -H "Content-Type: application/json" \
+  -H "apikey: SUA_CHAVE_EVOLUTION" \
+  -d '{
+    "event": "messages.upsert",
+    "instance": "meu-agente",
+    "data": {
+      "key": {
+        "remoteJid": "5562999999999@s.whatsapp.net"
+      },
+      "pushName": "Teste Usuário",
+      "message": {
+        "conversation": "Olá, gostaria de saber seus horários de funcionamento"
+      }
+    }
+  }'</div>
+
+<h2>9.2 — Enviar mensagem de teste pelo WhatsApp</h2>
+<ol>
+  <li>No chip DEDICADO conectado à Evolution, envie uma mensagem para outro número</li>
+  <li>Ou peça para um amigo enviar mensagem para o número do bot</li>
+  <li>Veja no n8n: Workflow → Executions para ver o resultado</li>
+</ol>
+
+<h2>9.3 — Checklist de validação</h2>
+<ul class="checklist">
+  <li>Webhook recebe mensagens do WhatsApp</li>
+  <li>n8n processa e salva na execução</li>
+  <li>IA (Groq) responde corretamente</li>
+  <li>Mensagem de volta chega no WhatsApp do cliente</li>
+  <li>Fluxo reconecta ao reiniciar o servidor</li>
+  <li>Rate limiting funciona (evita spam)</li>
+  <li>Fallback para humano ativa quando necessário</li>
+</ul>
+
+<!-- 13. DOMÍNIO E SSL -->
+<div class="page-break"></div>
+<h1>13. PASSO 10: DOMÍNIO E SSL (PRODUÇÃO)</h1>
+
+<h2>10.1 — Apontar domínio para o servidor</h2>
+<p>No painel do registrador de domínio (Registro.br, Namecheap, etc):</p>
+<div class="codigo">Tipo: A
+Nome: n8n
+Valor: IP_DO_SERVIDOR
+TTL: 300
+
+Tipo: A
+Nome: evolution
+Valor: IP_DO_SERVIDOR
+TTL: 300</div>
+
+<h2>10.2 — Instalar Nginx + SSL</h2>
+<div class="codigo">apt install nginx certbot python3-certbot-nginx -y
+
+# Configurar Nginx para n8n
+cat &gt; /etc/nginx/sites-available/n8n &lt;&lt; 'EOF'
+server {
+    listen 80;
+    server_name n8n.seudominio.com;
+    location / {
+        proxy_pass http://localhost:5678;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+EOF
+
+# Ativar
+ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled/
+nginx -t && systemctl reload nginx
+
+# Obter SSL gratuito
+certbot --nginx -d n8n.seudominio.com -m seu@email.com --agree-tos -n
+
+# Repetir para evolution.seudominio.com se necessário</div>
+
+<!-- 14. DICAS AVANÇADAS -->
+<div class="page-break"></div>
+<h1>14. DICAS AVANÇADAS E BOAS PRÁTICAS</h2>
+
+<ol>
+  <li><b>1. Human-in-the-loop:</b> Configure um nó "Switch" que mensagens complexas para atendimento humano via Telegram ou email.</li>
+  <li><b>2. Memória de contexto:</b> Use PostgreSQL no n8n para guardar histórico de conversa e manter contexto entre mensagens.</li>
+  <li><b>3. Rate limiting:</b> Adicione um nó "IF" limite mensagens por minuto por número para evitar spam.</li>
+  <li><b>4. Horário somente expediente:</b> Adicione nó que após o expediente envie: "Estamos fora do horário. Retornaremos amanhã!"</li>
+  <li><b>5. Mensagens em massa:</b> Para disparos marketing, use a Evolution API diretamente com delays entre envios.</li>
+  <li><b>6. Monitoramento:</b> Configure alertas no n8n (email/Telegram) quando workflow falhar > 3 vezes.</li>
+  <li><b>7. Grupos:</b> A Evolution API ignora grupos por default (groups=_ignore: true). Pode mudar se quiser moderar grupos.</li>
+  <li><b>8. Mídia:</b> O  suporta envio/recebimento de imagens, áudio, documentos e localização.</li>
+  <li><b>9. Backup:</b> Faça backup do volume n8n_data regularmente: <code>docker run --rm -v n8n_data:/data -v $(pwd):/backup tar czf /backup/n8n-backup.tar.gz /data</code></li>
+  <li><b>10. Atualização:</code></b> <code>docker compose pull && docker compose up -d</code> para atualizar Evolution API e n8n.</li>
+</ol>
+
+<!-- 15. TABELA DE PREÇOS -->
+<div class="page-break"></div>
+<h1>15. TABELA DE PREÇOS — QUANTO COBRAR</h1>
+
+<p>Valores praticados no mercado brasileiro para implementação de agentes de IA para WhatsApp em 2025/2026:</p>
+
+<table>
+  <tr><th>Serviço</th><th>Mínimo</th><th>Médio</th><th>Premium</th></tr>
+  <tr><td>Setup básico (bot responde FAQ)</td><td>R$ 1.000</td><td>R$ 2.000</td><td>R$ 4.000</td></tr>
+  <tr><td>Agente completo (IA + ações + DB)</td><td>R$ 2.000</td><td>R$ 4.000</td><td>R$ 8.000</td></tr>
+  <tr><td>+ Integração com sistemas externos</td><td>+ R$ 1.000</td><td>+ R$ 2.000</td><td>+ R$ 4.000</td></tr>
+  <tr><td>+ Agendamento automático</td><td>+ R$ 500</td><td>+ R$ 1.000</td><td>+ R$ 2.000</td></tr>
+  <tr><td>+ Envio de mídia (imagens, áudio)</td><td>+ R$ 300</td><td>+ R$ 500</td><td>+ R$ 1.000</td></tr>
+  <tr><td>+ Dashboard de métricas</td><td>+ R$ 500</td><td>+ R$ 1.000</td><td>+ R$ 2.000</td></tr>
+  <tr><td>+ Treinamento do modelo (fine-tuning)</td><td>+ R$ 1.000</td><td>+ R$ 2.000</td><td>+ R$ 5.000</td></tr>
+  <tr><td>Mensalidade (suporte + ajustes)</td><td>R$ 200/mês</td><td>R$ 500/mês</td><td>R$ 1.000/mês</td></tr>
+  <tr class="total-row"><td>TOTAL (implementação)</td><td>R$ 3.800</td><td>R$ 8.500</td><td>R$ 18.000</td></tr>
+</table>
+
+<div class="destaque">
+  <b>💰 Modelo de negócio:</b> Cobre implantação (R$ 2.000-8.000) + mensalidade (R$ 200-500/mês).<br>
+  Com 10 clientes = <b>R$ 2.000-5.000/mês de receita recorrente</b>.
+</div>
+
+<!-- 16. TROUBLESHOOTING -->
+<div class="page-break"></div>
+<h1>16. TROUBLESHOOTING — PROBLEMAS COMUNS</h1>
+
+<table>
+  <tr><th>Problema</th><th>Causa</th><th>Solução</th></tr>
+  <tr><td>QR Code não aparece</td><td>Instância não criada ou já conectada</td><td>DELETE a instância e crie novamente</td></tr>
+  <tr><td>"state": "close"</td><td>QR expirou ou conexão caiu</td><td>Gere novo QR Code</td></tr>
+  <tr><td>Webhook não dispara</td><td>URL errada ou CORS</td><td>Verifique URL no PUT /webhook/set</td></tr>
+  <tr><td>IA não responde</td><td>API key Groq inválida ou rate limit</td><td>Verifique key no console.groq.com</td></tr>
+  <tr><td>Mensagem duplicada</td><td>Webhook disparando 2x</td><td>Filtre by event= "messages.upsert" AND fromMe=false</td></tr>
+  <tr><td>Consumo alto de RAM</td><td>Evolution API pesada</td><td>Adicione ou limite : "DATABASE_PROVIDER=sqlite"</td></tr>
+  <tr><td>Container reiniciando</td><td>Falta de memória na VPS</td><td>Adicione swap: fallocate -l 2G /swapfile && mkswap /swapfile && swapon /swapfile</td></tr>
+  <tr><td>"INVALID_KEY" na Evolution</td><td>API key errada</td><td>Mude AUTHENTICATION_API_KEY e recrie os containers</td></tr>
+</table>
+
+<!-- NOTA FINAL -->
+<div class="page-break"></div>
+<div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1a365d, #2b6cb0); border-radius: 12px; color: white;">
+  <div style="font-size: 48px; margin-bottom: 10px;">🤖✅</div>
+  <h2 style="color: white; font-size: 20pt; margin-bottom: 10px;">PARABÉNS!</h2>
+  <p style="font-size: 13pt; color: #bee3f8;">
+    Se você seguiu todos os passos, seu agente de IA para WhatsApp está funcionando!<br><br>
+    <b>Stack: n8n + Evolution API + Groq (Llama 3.3) = 100% gratuito</b><br><br>
+    Custo operacional: apenas o servidor VPS (~R$ 60-120/mês)<br>
+    Valor cobrado ao cliente: R$ 2.000 a R$ 18.000 + mensalidade<br><br>
+    <span style="font-size: 10pt; color: #90cdf4;">Documento gerado em Maio/2026 | Corumbá Sistemas</span>
+  </p>
+</div>
+
+</body>
+</html>
